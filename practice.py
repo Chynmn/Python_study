@@ -77,14 +77,69 @@ print((3 > 0) | (3 > 5))   #True
 print(5 > 4 > 3)    # True
 print(5 > 4 > 7)    # False
 
+# 간단한 수식
+print(2 + 3 * 4)    # 14
+print((2 + 3) * 4)  # 20
+number = 2 + 3 * 4  # 14
+print(number)
+number = number + 2 # 16
+print(number)
+number += 2         # 18
+print(number)
+number *= 2         # 36
+print(number)
+number /= 2         # 18
+print(number)
+number -= 2         # 16
+print(number)
+number %= 5         # 1
+print(number)
 
+# 숫자 처리 함수
+print(abs(-5))  # 절댓값 5
+print(pow(4, 2))    # 제곱 4^2 = 4*4 = 16
+print(max(5, 12))   # 최대값 12
+print(min(5, 12))   # 최솟값 5
+print(round(3.14))  # 반올림 3
+print(round(4.99))  # 반올림 5
 
+from math import *
+print(floor(4.99))  # 내림 4
+print(ceil(3.14))   # 올림 4
+print(sqrt(16))     # 제곱근 4
 
+# 랜덤 함수
+from random import *
+print(random())     # 0.0 ~ 1.0 미만의 임의의 값 생성
+print(random() * 10)    # 0.0 ~ 10.0 미만의 임의의 값 생성
+print(int(random() * 10))   # 0.0 ~ 10 미만의 임의의 값 생성
+print(int(random() * 10))
+print(int(random() * 10))
+print(int(random() * 10) + 1)   # 1 ~ 10 이하의 임의의 값 생성
 
+print(int(random() * 45) + 1)   # 1 ~ 45 이하의 임의의 값 생성 ex) 로또 번호 생성
+print(int(random() * 45) + 1)
+print(int(random() * 45) + 1)
+print(int(random() * 45) + 1)
+print(int(random() * 45) + 1)
+print(int(random() * 45) + 1)
 
+print(randrange(1, 46))     # 1 ~ 46 미만의 임의의 값 생성
+print(randrange(1, 46))
+print(randrange(1, 46))
+print(randrange(1, 46))
+print(randrange(1, 46))
+print(randrange(1, 46))
 
+print(randint(1,45))        # 1 ~ 45 이하의 임의의 값 생성
+print(randint(1,45))
+print(randint(1,45))
+print(randint(1,45))
+print(randint(1,45))
+print(randint(1,45))
 
-
+# Quiz) 당신은 최근에 코딩 스터디 모임을 새로 만들었습니다.
+# 월 4회 스터디를 하는데 3번은 온라인으로 하고 1번은 오프라인으로 하기로 했습니다.
 
 
 
