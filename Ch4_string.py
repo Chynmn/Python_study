@@ -40,6 +40,30 @@ print(python.find("Java"))  # 찾는 값이 없으면 -1을 반환
 print(python.count("n"))    # 문자가 몇번 사용 됐는지 알려주는 함수
 
 # 문자열 포맷
+print("a" + "b")
+print("a", "b")
+
+# 방법1
+print("나는 %d살 입니다." % 20)
+# = print("나는 %s살 입니다." % 20)
+print("나는 %s을 좋아해요" % "파이썬")
+print("Apple은 %c로 시작해요." % "A")
+print("나는 %s색과 %s색을 좋아해요." % ("파란", "빨간"))
+
+# 방법2
+print("나는 {}살 입니다.".format(25))
+print("나는 {}색과 {}색을 좋아해요.".format("검은", "하얀"))
+print("나는 {1}색과 {0}색을 좋아해요.".format("검은", "하얀"))    # 순서를 지정하는 방법
+
+# 방법3
+print("나는 {age}살이며, {color}색을 좋아해요.".format(age = 23, color = "blue"))
+print("나는 {age}살이며, {color}색을 좋아해요.".format(color = "blue", age = 23))
+
+# 방법4 (v3.6 이상~)
+age = 21
+color = "green"
+print(f"나는 {age}살이며, {color}색을 좋아해요.")
+
 
 
 
