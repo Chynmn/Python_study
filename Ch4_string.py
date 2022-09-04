@@ -64,15 +64,34 @@ age = 21
 color = "green"
 print(f"나는 {age}살이며, {color}색을 좋아해요.")
 
+# 탈출 문자
+print("백문이 불여일견\n백견이 불여일타")     # 줄 바꿈 : \n
 
+print("저는 '조현민'입니다.")               # 문장 내에서 따옴표 : \"  \'
+print('저는 "조현민"입니다.')
+print("저는 \"조현민\"입니다.")
+print("저는 \'조현민\'입니다.")
 
+print("  \\  ~ \\ Python_study \\   basic")    # 문장 내에서 \ : \\
+print("Red Apple\rPine")        # 커서를 맨 앞으로 이동 : \r
+print("Redd\bApple")            # 백스페이스 : \b
+print("Red\tApple")             # 탭 : \t
 
+# Quiz 3) 사이트별로 비밀번호를 만들어 주는 프로그램을 작성하시오
+"""
+ex) https://naver.com
+규칙1 : http:// 부분은 제외 => naver.com
+규칙2 : 처음 만나는 점(.) 이후 부분은 제외 => naver
+규칙3 : 남은 글자 중 처음 세자리(nav) + 글자 갯수(5) + 글자 내 'e' 갯수(1) + "!" 로 구성
+생성된 비밀번호 : nav51!
+"""
 
-
-
-
-
-
-
-
+# url = "https://naver.com"
+url = "https://youtube.com"
+my_str = url.replace("https://", "")    # 규칙1
+print(my_str)
+my_str = my_str[:my_str.index(".")]     # 규칙2
+print(my_str)
+password = my_str[:3] + str(len(my_str)) + str(my_str.count("e")) + "!"
+print("{0}의 비밀번호는 {1} 입니다.".format(url, password))
 
