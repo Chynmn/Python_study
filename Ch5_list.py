@@ -60,8 +60,45 @@ num_list.extend(mix_list)
 print(num_list)
 
 
+# 사전 Dictionary -> key(중복x), value
+cabinet = {3:"유재석", 100:"김태호"}
+print(cabinet[3])
+print(cabinet[100])
+# print(cabinet[5]) -> 없는 키는 프로그램 오류 발생
 
+print(cabinet.get(3))
+print(cabinet.get(5))   # 없는 키는 None을 반환
+print(cabinet.get(5, "사용 가능"))  # 값이 없을 때 값을 주는 방법
 
+print(3 in cabinet)     # True  -> key가 있는지 없는지를 확인
+print(5 in cabinet)     # False
+
+cabinet = {"A-3":"유재석", "B-100":"김태호"}  # 문자열 key도 가능
+print(cabinet["A-3"])
+print(cabinet["B-100"])
+
+# 새로운 손님(key 생성 및 업데이트)
+print(cabinet)
+cabinet["C-20"] = "조세호"     # key가 없다면 새로 생성, 원래 있는 key는 값을 update
+cabinet["A-3"]  = "김종국"
+print(cabinet)
+
+# 간 손님
+del cabinet["A-3"]
+print(cabinet)
+
+# key 모두 출력
+print(cabinet.keys())
+
+# value 모두 출력
+print(cabinet.values())
+
+# key, value 쌍으로 출력
+print(cabinet.items())
+
+# 목욕탕 폐점
+cabinet.clear()
+print(cabinet)
 
 
 
