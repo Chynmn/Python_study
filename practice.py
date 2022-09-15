@@ -45,16 +45,16 @@ station = "인천공항"
 print(station + "행 열차가 들어오고 있습니다.")
 
 # 연산자
-print(1+1)  # 2
-print(3-2)  # 1
-print(5*2)  # 10
-print(6/3)  # 2
+print(1 + 1)  # 2
+print(3 - 2)  # 1
+print(5 * 2)  # 10
+print(6 / 3)  # 2
 
-print(2**3) # 2^3
-print(5%3)  # 2
-print(10%3) # 1
-print(5//3) # 몫 = 1
-print(10//3)# 몫 = 3
+print(2 ** 3) # 2^3
+print(5 % 3)  # 2
+print(10 % 3) # 1
+print(5 // 3) # 몫 = 1
+print(10 // 3)# 몫 = 3
 
 print(10 > 3)   # True
 print(4 >= 7)   # False
