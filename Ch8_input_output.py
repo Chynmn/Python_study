@@ -56,3 +56,42 @@ print("{0:^<30,}".format(1000000000000000))
 print("{0:f}".format(5/3))
 # 소수점 특정 자리수 까지만 표시
 print("{0:.2f}".format(5/3))
+
+
+# 파일 입출력
+# score_file = open("score.txt", "w", encoding="utf8")
+# print("수학 : 0", file=score_file)
+# print("영어 : 50", file=score_file)
+# score_file.close()
+
+# score_file = open("score.txt", "a", encoding="utf8")
+# score_file.write("과학 : 80")
+# score_file.write("\n코딩 : 100")        # print와는 달리 write는 자동 줄바꿈이 없다.
+
+# score_file = open("score.txt", "r", encoding="utf8")
+# print(score_file.read())
+# score_file.close()
+
+# score_file = open("score.txt", "r", encoding="utf8")
+# print(score_file.readline(), end="")        # 줄별로 읽기, 한 줄 읽고 커서는 다음 줄로 이동
+# print(score_file.readline(), end="")        # print는 자동으로 줄바꿈을 하므로
+# print(score_file.readline(), end="")        # end="" 를 통해 한 줄씩만 띄도록 할 수 있음
+# print(score_file.readline(), end="")
+# score_file.close()
+
+# 파일 안의 내용이 몇 줄인지 모를 때
+# score_file = open("score.txt", "r", encoding="utf8")
+# while True:
+#     line = score_file.readline()
+#     if not line:
+#         break
+#     print(line, end="")
+# score_file.close()
+
+# list 형태로 저장
+score_file = open("score.txt", "r", encoding="utf8")
+lines = score_file.readlines()
+for line in lines:
+    print(line, end="")
+
+score_file.close()
