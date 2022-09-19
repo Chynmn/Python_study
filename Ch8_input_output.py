@@ -2,6 +2,7 @@
 # sep : seperate -> ','가 들어가는 부분에 원하는 문자열을 넣을 수 있음
 # end : 문장의 끝부분을 어떻게 출력할 지 지정할 수 있음
 
+import pickle                                   # encoding 할 필요x
 print("Python", "Java", "JavaScript", sep=", ")
 print("Python", "Java", "JavaScript", sep=" vs ", end="? ")
 print("무엇이 더 재미있을까요?")
@@ -89,9 +90,24 @@ print("{0:.2f}".format(5/3))
 # score_file.close()
 
 # list 형태로 저장
-score_file = open("score.txt", "r", encoding="utf8")
-lines = score_file.readlines()
-for line in lines:
-    print(line, end="")
+# score_file = open("score.txt", "r", encoding="utf8")
+# lines = score_file.readlines()
+# for line in lines:
+#     print(line, end="")
 
-score_file.close()
+# score_file.close()
+
+
+# pickle : 프로그램 상에서 사용하고 있는 데이터를 파일 형태로 저장하는 것
+# pickle을 쓰기 위해서는 binary 타입을 정의해주여야 함
+# profile_file = open("profile.pickle", "wb")
+# profile = {"이름": "박명수", "나이": 30, "취미": ["축구", "골프", "골프"]}
+# print(profile)
+# pickle.dump(profile, profile_file)  # profile에 있는 정보를 file에 저장
+
+# profile_file.close()
+
+profile_file = open("profile.pickle", "rb")
+profile = pickle.load(profile_file)   # file에 있는 정보를 profile에 불러오기
+print(profile)
+profile_file.close()
