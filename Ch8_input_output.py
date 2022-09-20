@@ -2,7 +2,7 @@
 # sep : seperate -> ','가 들어가는 부분에 원하는 문자열을 넣을 수 있음
 # end : 문장의 끝부분을 어떻게 출력할 지 지정할 수 있음
 
-import pickle                                   # encoding 할 필요x
+import pickle
 print("Python", "Java", "JavaScript", sep=", ")
 print("Python", "Java", "JavaScript", sep=" vs ", end="? ")
 print("무엇이 더 재미있을까요?")
@@ -94,20 +94,45 @@ print("{0:.2f}".format(5/3))
 # lines = score_file.readlines()
 # for line in lines:
 #     print(line, end="")
-
 # score_file.close()
 
 
-# pickle : 프로그램 상에서 사용하고 있는 데이터를 파일 형태로 저장하는 것
+# pickle : 프로그램 상에서 사용하고 있는 데이터를 파일 형태로 저장하는 라이브러리
 # pickle을 쓰기 위해서는 binary 타입을 정의해주여야 함
+# import pickle                                   # encoding 할 필요x
 # profile_file = open("profile.pickle", "wb")
 # profile = {"이름": "박명수", "나이": 30, "취미": ["축구", "골프", "골프"]}
 # print(profile)
 # pickle.dump(profile, profile_file)  # profile에 있는 정보를 file에 저장
-
 # profile_file.close()
 
-profile_file = open("profile.pickle", "rb")
-profile = pickle.load(profile_file)   # file에 있는 정보를 profile에 불러오기
-print(profile)
-profile_file.close()
+# profile_file = open("profile.pickle", "rb")
+# profile = pickle.load(profile_file)   # file에 있는 정보를 profile에 불러오기
+# print(profile)
+# profile_file.close()
+
+
+# with : 파일을 열고, 처리 후, 닫는 과정을 편하게 해주는 라이브러리
+with open("profile.pickle", "rb") as profile_file:  # 파일을 열어 변수에 저장
+    print(pickle.load(profile_file))
+# with문을 탈출하면서 자동으로 파일을 닫아주므로 파일을 닫을 필요가 없음
+
+# pickle을 쓰지 않고 일반적인 파일을 with문으로 쓰고 읽기
+# with open("study.txt", "w", encoding="utf8") as study_file:
+#     study_file.write("파이썬을 열심히 공부하고 있어요")
+# with open("study.txt", "r", encoding="utf8") as study_file:
+#     print(study_file.read())
+
+
+# Quiz 7) 당신의 회사에서는 매 주 1회 작성해야 하는 보고서가 있습니다.
+"""
+보고서는 항상 아래와 같은 형태로 출력되어야 합니다.
+
+- X 주차 주간보고 -
+부서 : 
+이름 : 
+업무 요약 : 
+
+1주차부터 50주차까지의 보고서 파일을 만드는 프로그램을 작성하시오.
+조건 : 파일명은 '1주차.txt', '2주차.txt', ...와 같이 만듭니다.
+"""
