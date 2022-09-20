@@ -2,7 +2,6 @@
 # sep : seperate -> ','가 들어가는 부분에 원하는 문자열을 넣을 수 있음
 # end : 문장의 끝부분을 어떻게 출력할 지 지정할 수 있음
 
-import pickle
 print("Python", "Java", "JavaScript", sep=", ")
 print("Python", "Java", "JavaScript", sep=" vs ", end="? ")
 print("무엇이 더 재미있을까요?")
@@ -113,8 +112,9 @@ print("{0:.2f}".format(5/3))
 
 
 # with : 파일을 열고, 처리 후, 닫는 과정을 편하게 해주는 라이브러리
-with open("profile.pickle", "rb") as profile_file:  # 파일을 열어 변수에 저장
-    print(pickle.load(profile_file))
+# import pickle
+# with open("profile.pickle", "rb") as profile_file:  # 파일을 열어 변수에 저장
+#     print(pickle.load(profile_file))
 # with문을 탈출하면서 자동으로 파일을 닫아주므로 파일을 닫을 필요가 없음
 
 # pickle을 쓰지 않고 일반적인 파일을 with문으로 쓰고 읽기
@@ -136,3 +136,10 @@ with open("profile.pickle", "rb") as profile_file:  # 파일을 열어 변수에
 1주차부터 50주차까지의 보고서 파일을 만드는 프로그램을 작성하시오.
 조건 : 파일명은 '1주차.txt', '2주차.txt', ...와 같이 만듭니다.
 """
+
+for i in range(1, 51):
+    with open(str(i) + "주차.txt", "w", encoding="utf8") as report_file:
+        report_file.write("- {0} 주차 주간보고 -".format(i))
+        report_file.write("\n부서 : ")
+        report_file.write("\n이름 : ")
+        report_file.write("\n업무 요약 : ")
