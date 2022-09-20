@@ -32,13 +32,19 @@
 # attack(tank_name, "1시", tank_damage)
 # attack(tank2_name, "1시", tank2_damage)
 
-class Unit:
-    def __init__(self, name, hp, damage):   # __init__ : 생성자. 객체가 생성될 때 호출
+class Unit:     # 부모 클래스
+    def __init__(self, name, hp, speed):   # __init__ : 생성자. 객체가 생성될 때 호출
         self.name = name                    # 멤버 변수 : 클래스 내에서 정의된 변수
         self.hp = hp
-        self.damage = damage
-        print("{0} 유닛이 생성 되었습니다.".format(self.name))
-        print("체력 {0}, 공격력 {1}".format(self.hp, self.damage))
+        self.speed = speed
+        # self.damage = damage
+        # print("{0} 유닛이 생성 되었습니다.".format(self.name))
+        # print("체력 {0}, 공격력 {1}".format(self.hp, self.damage))
+
+    def move(self, location):
+        print("[지상 유닛 이동]")
+        print("{0} : {1} 방향으로 이동합니다. [속도 {2}]"
+              .format(self.name, location, self.speed))
 
 
 # marine1 = Unit("마린", 40, 5)       # self를 제외한 부분을 입력
@@ -58,11 +64,14 @@ class Unit:
 #     print("{0}는 현재 클로킹 상태입니다.".format(wraith2.name))
 
 
-# 메소드 - 공격유닛
-class AttackUnit:
-    def __init__(self, name, hp, damage):
-        self.name = name
-        self.hp = hp
+# 메소드(함수)) - 공격유닛
+# 상속  -  공격을 하지 않는 유닛
+# 메딕 : 의무병
+class AttackUnit(Unit):     # 자식 클래스
+    def __init__(self, name, hp, speed, damage):
+        # self.name = name
+        # self.hp = hp
+        Unit.__init__(self, name, hp, speed)   # 상속을 통해 다른 클래스의 변수를 받음
         self.damage = damage
 
     def attack(self, location):         # 메소드 앞에는 항상 self
@@ -78,9 +87,47 @@ class AttackUnit:
 
 
 # 파이어뱃 : 공격 유닛, 화염방사기
-firebat1 = AttackUnit("파이어뱃", 50, 16)
-firebat1.attack("5시")
+# firebat1 = AttackUnit("파이어뱃", 50, 16)
+# firebat1.attack("5시")
 
-# 공격 2번 받는다고 가정
-firebat1.damaged(25)
-firebat1.damaged(25)
+# # 공격 2번 받는다고 가정
+# firebat1.damaged(25)
+# firebat1.damaged(25)
+
+
+# 다중 상속
+# 드랍쉽 : 공중 유닛, 수송기. 마린 / 파이어뱃 / 탱크 등을 수송. 공격 X
+# 날 수 있는 기능을 가진 클래스
+class Flyable:
+    def __init__(self, flying_speed):
+        self.flying_speed = flying_speed
+
+    def fly(self, name, location):
+        print("{0} : {1} 방향으로 날아갑니다. [속도 {2}]"
+              .format(name, location, self.flying_speed))
+
+# 공중 공격 유닛 클래스
+
+
+class FlyableAttackUnit(AttackUnit, Flyable):
+    def __init__(self, name, hp, damage, flying_speed):
+        AttackUnit.__init__(self, name, hp, 0, damage)      # 0 -> 지상 speed 0
+        Flyable.__init__(self, flying_speed)
+
+
+# 발키리 : 공중 공격 유닛, 한 번에 14 미사일 발사
+# valkyrie = FlyableAttackUnit("발키리", 200, 6*14, 5)
+# valkyrie.fly(valkyrie.name, "3시")
+
+
+# 연산자 오버로딩 : 자식 클래스에서 정의한 메소드를 사용하는 것
+# 벌처 : 지상 유닛, 기동성이 좋음
+vulture = AttackUnit("벌쳐", 80, 10, 20)
+
+# 배틀크루저 : 공중 유닛, 체력과 공격력이 굉장히 좋음
+battlecrusier = FlyableAttackUnit("배틀크루저", 500, 25, 3)
+
+vulture.move("11시")
+battlecrusier.fly(battlecrusier.name, "9시")
+
+# 메소드 오버라이딩 :
