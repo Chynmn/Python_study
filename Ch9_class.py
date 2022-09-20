@@ -114,13 +114,16 @@ class FlyableAttackUnit(AttackUnit, Flyable):
         AttackUnit.__init__(self, name, hp, 0, damage)      # 0 -> 지상 speed 0
         Flyable.__init__(self, flying_speed)
 
+    def move(self, location):   # move 재정의
+        print("[공중 유닛 이동]")
+        self.fly(self.name, location)
 
 # 발키리 : 공중 공격 유닛, 한 번에 14 미사일 발사
 # valkyrie = FlyableAttackUnit("발키리", 200, 6*14, 5)
 # valkyrie.fly(valkyrie.name, "3시")
 
 
-# 연산자 오버로딩 : 자식 클래스에서 정의한 메소드를 사용하는 것
+# 메소드 오버라이딩 : 자식 클래스에서 정의한 메소드를 사용하는 것
 # 벌처 : 지상 유닛, 기동성이 좋음
 vulture = AttackUnit("벌쳐", 80, 10, 20)
 
@@ -128,6 +131,6 @@ vulture = AttackUnit("벌쳐", 80, 10, 20)
 battlecrusier = FlyableAttackUnit("배틀크루저", 500, 25, 3)
 
 vulture.move("11시")
-battlecrusier.fly(battlecrusier.name, "9시")
-
-# 메소드 오버라이딩 :
+# battlecrusier.fly(battlecrusier.name, "9시")    # 지상인지 공중인지 직접 검토해야하는 귀찮음
+# 메소드 오버라이딩을 통해 공중 유닛도 지상 유닛처럼 move 명령어를 통해 이동할 수 있도록 처리
+battlecrusier.move("9시")
