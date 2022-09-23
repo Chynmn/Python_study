@@ -36,7 +36,7 @@
 class Unit:     # 부모 클래스
     def __init__(self, name, hp, speed):   # __init__ : 생성자. 객체가 생성될 때 호출
         self.name = name                    # 멤버 변수 : 클래스 내에서 정의된 변수
-        self.hp = hp
+        self.hp = hp                        # self는 객체를 호출할 때 호출한 객체 자신이 전달된다.
         self.speed = speed
         # self.damage = damage
         # print("{0} 유닛이 생성 되었습니다.".format(self.name))
@@ -143,7 +143,9 @@ class BuildingUnit(Unit):
     def __init__(self, name, hp, location):
         # pass
         # Unit.__init__(self, name, hp, 0)
-        super().__init__(name, hp, 0)   # self 정보를 넘겨주지 않음. Unit class(부모) 상속 받아 초기화
+        super().__init__(name, hp, 0)   \
+            # super : self 정보를 넘겨주지 않음. Unit class(부모) 상속 받아 초기화.
+        # 다중 상속에서 맨 처음에 상속받은 클래스의 생성자만 호출되는 문제점
         self.location = location
 
 
@@ -161,6 +163,3 @@ supply_depot = BuildingUnit("서플라이 디폿", 500, "7시")
 
 # game_start()
 # game_over()
-
-
-# super :
