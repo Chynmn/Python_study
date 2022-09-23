@@ -141,7 +141,10 @@ battlecrusier.move("9시")
 # 건물
 class BuildingUnit(Unit):
     def __init__(self, name, hp, location):
-        pass
+        # pass
+        # Unit.__init__(self, name, hp, 0)
+        super().__init__(name, hp, 0)   # self 정보를 넘겨주지 않음. Unit class(부모) 상속 받아 초기화
+        self.location = location
 
 
 # 서플라이 디폿 : 건물, 1개 건물 = 8 인구수.
