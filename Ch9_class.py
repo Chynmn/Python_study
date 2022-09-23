@@ -32,6 +32,7 @@
 # attack(tank_name, "1시", tank_damage)
 # attack(tank2_name, "1시", tank2_damage)
 
+
 class Unit:     # 부모 클래스
     def __init__(self, name, hp, speed):   # __init__ : 생성자. 객체가 생성될 때 호출
         self.name = name                    # 멤버 변수 : 클래스 내에서 정의된 변수
@@ -123,7 +124,7 @@ class FlyableAttackUnit(AttackUnit, Flyable):
 # valkyrie.fly(valkyrie.name, "3시")
 
 
-# 메소드 오버라이딩 : 자식 클래스에서 정의한 메소드를 사용하는 것
+# 메소드 오버라이딩 : 자식 클래스가 부모클래스에 존재하는 메소드를 재정의하여 사용하는 것
 # 벌처 : 지상 유닛, 기동성이 좋음
 vulture = AttackUnit("벌쳐", 80, 10, 20)
 
@@ -134,3 +135,32 @@ vulture.move("11시")
 # battlecrusier.fly(battlecrusier.name, "9시")    # 지상인지 공중인지 직접 검토해야하는 귀찮음
 # 메소드 오버라이딩을 통해 공중 유닛도 지상 유닛처럼 move 명령어를 통해 이동할 수 있도록 처리
 battlecrusier.move("9시")
+
+
+# pass : 임시로 함수를 완성하지 않은 상태에서 완성된 것 처럼 넘어가게 할 수 있음.
+# 건물
+class BuildingUnit(Unit):
+    def __init__(self, name, hp, location):
+        # pass
+        # Unit.__init__(self, name, hp, 0)
+        super().__init__(name, hp, 0)   # self 정보를 넘겨주지 않음. Unit class(부모) 상속 받아 초기화
+        self.location = location
+
+
+# 서플라이 디폿 : 건물, 1개 건물 = 8 인구수.
+supply_depot = BuildingUnit("서플라이 디폿", 500, "7시")
+
+# pass 예시
+# def game_start():
+#     print("[알림] 새로운 게임을 시작합니다.")
+
+
+# def game_over():
+#     pass
+
+
+# game_start()
+# game_over()
+
+
+# super :
