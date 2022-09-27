@@ -1,3 +1,4 @@
+import turtle
 from random import *
 print("HelloWorld")
 
@@ -84,20 +85,110 @@ print("HelloWorld")
 #     print("뒷면입니다.")
 # print("게임이 종료되었습니다.")
 
-print("주사위 던지기 게임을 시작합니다.")
-dice1 = int(randrange(1, 7))
-dice2 = int(randrange(1, 7))
+# print("주사위 던지기 게임을 시작합니다.")
+# dice1 = int(randrange(1, 7))
+# dice2 = int(randrange(1, 7))
 
-Player1 = input("Player1 의 이름 : ")
-Player2 = input("Player2 의 이름 : ")
+# Player1 = input("Player1 의 이름 : ")
+# Player2 = input("Player2 의 이름 : ")
 
-print("------ 주사위를 굴립니다 ------")
-print("{0}의 주사위는 {1}".format(Player1, dice1))
-print("{0}의 주사위는 {1}".format(Player2, dice2))
+# print("------ 주사위를 굴립니다 ------")
+# print("{0}의 주사위는 {1}".format(Player1, dice1))
+# print("{0}의 주사위는 {1}".format(Player2, dice2))
 
-if dice1 > dice2:
-    print("{0}이 이겼습니다.".format(Player1))
-elif dice2 > dice1:
-    print("{0}이 이겼습니다.".format(Player2))
-elif dice1 == dice2:
-    print("비겼습나다.")
+# if dice1 > dice2:
+#     print("{0}이 이겼습니다.".format(Player1))
+# elif dice2 > dice1:
+#     print("{0}이 이겼습니다.".format(Player2))
+# elif dice1 == dice2:
+#     print("비겼습나다.")
+
+
+# t = turtle.Turtle()
+# t.shape("turtle")
+
+# t.penup()             # 펜을 올려서 그림이 그려지지 않게 한다.
+# t.goto(100, 100)      # 거북이를 (100, 100)으로 이동시킨다.
+# t.write("거북이가 여기로 오면 양수입니다.")
+# t.goto(100, 0)
+# t.write("거북이가 여기로 오면 0입니다.")
+# t.goto(100, -100)
+# t.write("거북이가 여기로 오면 음수입니다.")
+
+# t.goto(0, 0)          # (0, 0) 위치로 거북이를 이동시킨다.
+# t.pendown()           # 펜을 내려서 그림이 그려지게 한다.
+
+# s = turtle.textinput("", "숫자를 입력하시오: ")
+# n = int(s)
+
+# if n > 0:
+#     t.goto(100, 100)
+# if n == 0:
+#     t.goto(100, 0)
+# if n < 0:
+#     t.goto(100, -100)
+
+# turtle.done()
+
+
+# import turtle
+
+# t = turtle.Turtle()
+# # 커서의 모양을 거북이로 한다.
+# t.shape("turtle")
+
+# # 거북이가 그리는 선의 두께를 3으로 한다.
+# t.width(3)
+# # 거북이를 3배 확대한다.
+# t.shapesize(3, 3)
+
+# # 무한 루프로 진입한다. 이 루프는 Ctrl+C를 입력받아 종료된다.
+# while True:
+#     command = input("명령을 입력하시오: ")
+#     if command == "l":      # 사용자가 "l"을 입력하였으면
+#         t.left(90)          # 왼쪽으로 90도 회전
+#         t.forward(100)
+#     if command == "r":      # 사용자가 "r"을 입력하였으면
+#         t.right(90)         # 오른쪽으로 90도 회전
+#         t.forward(100)
+
+
+# x, y = map(float, input('점의 좌표 x, y를 입력하시오 : ').split())
+# if x*x + y*y > 5*5:
+#     print('원의 외부에 있음')
+# else:
+#     print('원의 내부에 있음')
+
+# id = "ilovepython"
+# s = input("아이디를 입력하시오: ")
+# if s == id:
+#     print("환영합니다.")
+# else:
+#     print("아이디를 찾을 수 없습니다.")
+
+# import turtle
+t = turtle.Turtle()
+t.shape("turtle")
+
+s = turtle.textinput("", "도형을 입력하시오: ")
+if s == "사각형":
+    s = turtle.textinput("", "가로: ")
+    w = int(s)
+    s = turtle.textinput("", "세로: ")
+    h = int(s)
+    t.forward(w)
+    t.left(90)
+    t.forward(h)
+    t.left(90)
+    t.forward(w)
+    t.left(90)
+    t.forward(h)
+elif s == "삼각형":
+    s = tutle.textinput("", "가로: ")
+    w = int(s)
+    s = turtle.textinput("", "세로: ")
+    h = int(s)
+    t.forward(w)
+    t.left(120)
+
+turtle.done()
