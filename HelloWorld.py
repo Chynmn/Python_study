@@ -1,6 +1,8 @@
+
 import turtle
 from random import *
-print("HelloWorld")
+
+# print("HelloWorld")
 
 # -*- coding: utf-8 -*-
 
@@ -167,28 +169,70 @@ print("HelloWorld")
 #     print("아이디를 찾을 수 없습니다.")
 
 # import turtle
+# t = turtle.Turtle()
+# t.shape("turtle")
+
+# s = turtle.textinput("", "도형을 입력하시오: ")
+# if s == "사각형":
+#     s = turtle.textinput("", "가로: ")
+#     w = int(s)
+#     s = turtle.textinput("", "세로: ")
+#     h = int(s)
+#     t.forward(w)
+#     t.left(90)
+#     t.forward(h)
+#     t.left(90)
+#     t.forward(w)
+#     t.left(90)
+#     t.forward(h)
+# elif s == "삼각형":
+#     s = tutle.textinput("", "가로: ")
+#     w = int(s)
+#     s = turtle.textinput("", "세로: ")
+#     h = int(s)
+#     t.forward(w)
+#     t.left(120)
+
+# turtle.done()
+
+
+# t = turtle.Turtle()
+
+# t.circle(100)       # 반지름이 100인 원을 그린다.
+# t.left(60)          # 60도 만큼 터틀을 왼쪽으로 회전시킨다.
+# t.circle(100)
+# t.left(60)
+# t.circle(100)
+# t.left(60)
+# t.circle(100)
+# t.left(60)
+# t.circle(100)
+# t.left(60)
+# t.circle(100)
+# turtle.done()
+
+
+# t = turtle.Turtle()
+# t.shape("turtle")
+
+# for i in range(30):
+#     length = random.randint(1, 100)
+#     t.forward(length)
+#     angle = random.randint(-180, 180)
+#     t.right(angle)
+
+# turtle.done()
+
+
 t = turtle.Turtle()
-t.shape("turtle")
+# 거북이의 속도는 0으로 설정하면 최대가 된다.
+t.speed(0)
+t.width(3)
 
-s = turtle.textinput("", "도형을 입력하시오: ")
-if s == "사각형":
-    s = turtle.textinput("", "가로: ")
-    w = int(s)
-    s = turtle.textinput("", "세로: ")
-    h = int(s)
-    t.forward(w)
-    t.left(90)
-    t.forward(h)
-    t.left(90)
-    t.forward(w)
-    t.left(90)
-    t.forward(h)
-elif s == "삼각형":
-    s = tutle.textinput("", "가로: ")
-    w = int(s)
-    s = turtle.textinput("", "세로: ")
-    h = int(s)
-    t.forward(w)
-    t.left(120)
-
+length = 10	            # 초기 선의 길이는 10으로 한다.
+# while 반복문이다. 선의 길이가 500보다 작으면 반복한다.
+while length < 500:
+    t.forward(length)   # length만큼 전진한다.
+    t.right(89)         # 89도 오른쪽으로 회전한다.
+    length += 5	        # 선의 길이를 5만큼 증가시킨다.
 turtle.done()
