@@ -224,15 +224,54 @@ from random import *
 # turtle.done()
 
 
-t = turtle.Turtle()
-# 거북이의 속도는 0으로 설정하면 최대가 된다.
-t.speed(0)
-t.width(3)
+# t = turtle.Turtle()
+# # 거북이의 속도는 0으로 설정하면 최대가 된다.
+# t.speed(0)
+# t.width(3)
+#
+# length = 10	            # 초기 선의 길이는 10으로 한다.
+# # while 반복문이다. 선의 길이가 500보다 작으면 반복한다.
+# while length < 500:
+#     t.forward(length)   # length만큼 전진한다.
+#     t.right(89)         # 89도 오른쪽으로 회전한다.
+#     length += 5	        # 선의 길이를 5만큼 증가시킨다.
+# turtle.done()
 
-length = 10	            # 초기 선의 길이는 10으로 한다.
-# while 반복문이다. 선의 길이가 500보다 작으면 반복한다.
-while length < 500:
-    t.forward(length)   # length만큼 전진한다.
-    t.right(89)         # 89도 오른쪽으로 회전한다.
-    length += 5	        # 선의 길이를 5만큼 증가시킨다.
-turtle.done()
+# def calc(n1, n2):
+#     return n1 + n2, n1 - n2, n1 * n2, n1 / n2
+
+# n1, n2 = 200, 100
+# t1, t2, t3, t4 = calc(n1, n2)
+# print(n1, '+', n2, '=', t1)
+# print(n1, '-', n2, '=', t2)
+# print(n1, '*', n2, '=', t3)
+# print(n1, '/', n2, '=', t4)
+
+
+# def print_counter():
+#     print('counter =', counter)
+
+# counter = 100
+# print_counter()
+# print('counter =', counter)
+
+# 다음과 같은 리스트가 생성되어 있다.
+population = ["Seoul", 9765, "Busan", 3441, "Incheon", 2954]
+
+print('서울 인구:', population[1])     # 문제 1)
+print('인천 인구:', population[-1])    # 문제 2)
+
+cities = population[0::2]             # 문제 3)
+print('도시 리스트:', cities)
+pops = population[1::2]               # 문제 4)
+print('인구의 합:', sum(pops))
+
+
+slist = ['Kim', 178.9, 'Park', 173.5, 'Lee', 176.1]
+slist[2:4] = ['Paik', 180.0]
+print(slist)
+slist[3] = 175.0
+print(slist)
+slist.insert(4, "Hong")
+slist.insert(5, 168.1)
+print(slist)
