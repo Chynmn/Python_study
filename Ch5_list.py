@@ -5,10 +5,11 @@
 # subway2 = 20
 # subway3 = 30
 
+from random import *
 subway = [10, 20, 30]
 print(subway)
 
-subway= ["유재석", "조세호", "박명수"]
+subway = ["유재석", "조세호", "박명수"]
 print(subway)
 
 # 조세호씨가 몇 번째 칸에 타고 있는가?
@@ -16,7 +17,7 @@ print(subway.index("조세호"))
 
 # 하하씨가 다음 정유장에서 다음 칸에 탐
 subway.append("하하")
-print("subway")
+print(subway)
 
 # 정형돈씨를 유재석씨와 조세호 사기에 태워봄
 subway.insert(1, "정형돈")
@@ -61,7 +62,7 @@ print(num_list)
 
 
 # 사전 Dictionary -> key(중복x), value
-cabinet = {3:"유재석", 100:"김태호"}
+cabinet = {3: "유재석", 100: "김태호"}
 print(cabinet[3])
 print(cabinet[100])
 # print(cabinet[5]) -> 없는 키는 프로그램 오류 발생
@@ -73,14 +74,14 @@ print(cabinet.get(5, "사용 가능"))  # 값이 없을 때 값을 주는 방법
 print(3 in cabinet)     # True  -> key가 있는지 없는지를 확인
 print(5 in cabinet)     # False
 
-cabinet = {"A-3":"유재석", "B-100":"김태호"}  # 문자열 key도 가능
+cabinet = {"A-3": "유재석", "B-100": "김태호"}  # 문자열 key도 가능
 print(cabinet["A-3"])
 print(cabinet["B-100"])
 
 # 새로운 손님(key 생성 및 업데이트)
 print(cabinet)
 cabinet["C-20"] = "조세호"     # key가 없다면 새로 생성, 원래 있는 key는 값을 update
-cabinet["A-3"]  = "김종국"
+cabinet["A-3"] = "김종국"
 print(cabinet)
 
 # 간 손님
@@ -184,12 +185,11 @@ print(menu, type(menu))
  print(sample(lst, 1))
 """
 
-from random import *
 
 users = range(1, 21)    # 1부터 20까지 숫자를 생성
-# print(type(users))
+print(type(users))
 users = list(users)
-# print(type(users))
+print(type(users))
 
 print(users)
 shuffle(users)
@@ -200,4 +200,3 @@ print("-- 당첨자 발표 --")
 print("치킨 당첨자 : {0}".format(winners[0]))
 print("커피 당첨자 : {0}".format(winners[1:]))
 print("-- 축하 합니다 --")
-
